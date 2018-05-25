@@ -1,0 +1,44 @@
+﻿<Window x:Class="Sudoku.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sudoku.Views"
+        xmlns:localVMs="clr-namespace:Sudoku.ViewModels"
+        xmlns:localModels="clr-namespace:Sudoku.Models"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:md="https://github.com/fantasticfiasco/mvvm-dialogs"
+        md:DialogServiceViews.IsRegistered="True"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="264.733" Width="591.59"
+        WindowState="Normal">
+
+    <Window.Resources>
+        <!-- Insert here your Data Templates -->
+        <DataTemplate x:Key="SampleTemplate">
+            <StackPanel/>
+        </DataTemplate>
+
+    </Window.Resources>
+    <Window.InputBindings>
+        <!-- Example of Keyboard shortcuts -->
+        <KeyBinding Command="{Binding SaveCmd}" Key="S" Modifiers="Ctrl" />
+        <KeyBinding Command="{Binding SaveAsCmd}" Gesture="Ctrl+Shift+S" />
+        <KeyBinding Command="{Binding OpenCmd}" Gesture="Ctrl+O" />
+        <KeyBinding Command="{Binding NewCmd}" Gesture="Ctrl+N" />
+        <KeyBinding Command="{Binding ExitCmd}" Gesture="Alt+F4" />
+    </Window.InputBindings>
+
+    <Grid Margin="10,0,2.8,-2.8">
+        <Label Content="SUDOKU" Margin="184,10,184,161" Height="67" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" Foreground="White"/>
+        <Button Content="EASY" Margin="174,100,288,93" Click="Button_Click" Background="#FF94A68C"/>
+        <Button Content="HARD" Margin="209,171,254,23" Click="Button_Click_1" Background="#FF94A68C"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:/Users\IvanMarkov\Downloads\PS_39_Ivan\PS_39_Ivan\Sudoku\background.jpg"/>
+        </Grid.Background>
+    </Grid>
+    
+    
+    
+</Window>
